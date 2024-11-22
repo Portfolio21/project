@@ -1,3 +1,3 @@
 <?php
 
-echo 'hello world';
+require_once 'router.php';
