@@ -11,4 +11,9 @@ class Init
             (new Class404())->index();
         }
     }
+
+    public function renderView($fileName)
+    {
+        include __DIR__ . '/../View/html.php';
+    }
 }
