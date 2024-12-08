@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<h5>Admin Panel</h5>
-
-<?php include __DIR__ . '/../View/' . $fileName . '.html'?>
+<?php include __DIR__ . '/../View/' . $fileName . '.php'?>
 </body>
 </html>
