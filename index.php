@@ -11,10 +11,12 @@ spl_autoload_register(function ($class) {
     require_once $file;
 });
 
+use Database\Connection;
 use Route\Route;
 use Route\Router;
 
 $route = new Route();
 
 $router = new Router();
+new Connection();
 $router->init($route->getRoutes());

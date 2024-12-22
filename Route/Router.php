@@ -13,7 +13,7 @@ class Router
             $parameter = null;
         } else {
             $route = $routes[$url];
-            $parameter = $_GET[$route['parameter'] ?? null] ?? null;
+            $parameter = isset($route['parameter']) && $route['parameter'] == 'all' ? $route['parameter'] : $_GET[$route['parameter'] ?? null] ?? null;
         }
 
         $className = 'Controller\\' . $route['className'];
@@ -22,8 +22,10 @@ class Router
 
         if ($parameter == null) {
             $obj->{$route['method']}();
-        } else {
+        } elseif($parameter !== 'all') {
             $obj->{$route['method']}($parameter);
+        } else {
+            $obj->{$route['method']}(...$_GET);
         }
     }
 }

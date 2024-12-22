@@ -1,10 +1,10 @@
 <h5>Admin Panel</h5>
 <h2>Add new post</h2>
-<form action="">
+<form action="/admin/post/create">
     <table>
         <tr>
             <td>ID</td>
-            <td><input name="ID"></td>
+            <td><input name="id"></td>
         </tr>
         <tr>
             <td>Title</td>
@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td>Category ID</td>
-            <td><input name="category_ID"></td>
+            <td><input name="category_id"></td>
         </tr>
         <tr>
             <td colspan=1><button type="submit">add post</button></td>

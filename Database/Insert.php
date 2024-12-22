@@ -33,6 +33,13 @@ class Insert
         return $this->buildSql($table, $strFields, $sql);
     }
 
+    public function execute($query)
+    {
+        $connection = Connection::getConnection();
+
+        return $connection->exec($query);
+    }
+
     private function buildSql($table, $fields, $values)
     {
         return "INSERT INTO $table ($fields) VALUE $values";
