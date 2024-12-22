@@ -28,10 +28,10 @@ class Gallery
         }
     }
 
-    public function save()
+    public function save($values)
     {
         $insert = new Insert();
-        $dataGenerator = new GalleryDataGenerator();
-        $sql = $insert->build($dataGenerator->geImagesValues(), self::TABLE_NAME, self::FIELDS);
+        $query = $insert->build($values, self::TABLE_NAME, self::FIELDS);
+        $insert->execute($query);
     }
 }
