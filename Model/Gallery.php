@@ -2,10 +2,14 @@
 
 namespace Model;
 
+use Database\Insert;
 use Model\DataGenerator\GalleryDataGenerator;
 
 class Gallery
 {
+    private const FIELDS = ['id', 'name', 'image_url', 'category', 'category_id'];
+    private const TABLE_NAME = 'gallery';
+
     public function getAllImages(): array
     {
         $dataGenerator = new GalleryDataGenerator();
@@ -22,5 +26,12 @@ class Gallery
                 return $image;
             }
         }
+    }
+
+    public function save()
+    {
+        $insert = new Insert();
+        $dataGenerator = new GalleryDataGenerator();
+        $sql = $insert->build($dataGenerator->geImagesValues(), self::TABLE_NAME, self::FIELDS);
     }
 }

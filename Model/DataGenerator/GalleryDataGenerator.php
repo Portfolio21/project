@@ -44,4 +44,45 @@ class GalleryDataGenerator
             ],
         ];
     }
+
+    public function geImagesValues(): array
+    {
+        return [
+            [
+                 11,
+                'Game shooter',
+                'shooter.png',
+                'game',
+                33,
+            ],
+            [
+                12,
+                'amazing ocean',
+                'amazing-ocean.png',
+                'traveling',
+                34,
+            ],
+            [
+                13,
+                'crazy speed',
+                'crazy-speed.png',
+                'car',
+                35,
+            ],
+            [
+                14,
+                'space',
+                'space.png',
+                'space',
+                37,
+            ],
+            [
+                15,
+                'forgotten creators',
+                'forgotten-creators.png',
+                'morphology',
+                39,
+            ],
+        ];
+    }
 }
